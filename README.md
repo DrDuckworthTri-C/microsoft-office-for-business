@@ -13,8 +13,8 @@ A free, two-session beginner workshop covering the Microsoft 365 apps used most 
 
 Download these two files before Session 1.
 
-- [Student Workbook](student/Student_Workbook.docx?raw=true) (Word): six lessons with step-by-step instructions, practice activities, and self-checks
-- [Expense Tracker Starter](student/Expense_Tracker_Starter.xlsx?raw=true) (Excel): sample data for Lesson 3 if you prefer not to type it
+- [Student Workbook](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Student_Workbook.docx) (Word): six lessons with step-by-step instructions, practice activities, and self-checks
+- [Expense Tracker Starter](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Expense_Tracker_Starter.xlsx) (Excel): sample data for Lesson 3 if you prefer not to type it
 
 ### Before the first session
 
@@ -32,8 +32,8 @@ Download these two files before Session 1.
 
 ## For instructors
 
-- [Workshop Plan](instructor/Workshop_Plan.docx?raw=true): learning outcomes, preparation checklists, minute-by-minute session agendas, assessment table, rubric, and verified resource list
-- [Course Calendar](instructor/Course_Calendar.docx?raw=true): November 2026 calendar, session agendas in minutes, key dates, and instructor preparation timeline
+- [Workshop Plan](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/instructor/Workshop_Plan.docx): learning outcomes, preparation checklists, minute-by-minute session agendas, assessment table, rubric, and verified resource list
+- [Course Calendar](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/instructor/Course_Calendar.docx): November 2026 calendar, session agendas in minutes, key dates, and instructor preparation timeline
 
 ## Free Microsoft resources used in this course
 

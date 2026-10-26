@@ -30,11 +30,6 @@ Download these two files before Session 1.
 - An email with a OneDrive link and a Teams meeting on your calendar
 - The [Microsoft Productivity Accreditation 2026](https://learn.microsoft.com/en-us/training/paths/microsoft-productivity-accreditation-2026/) badge on Microsoft Learn
 
-## For instructors
-
-- [Workshop Plan](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/instructor/Workshop_Plan.docx): learning outcomes, preparation checklists, minute-by-minute session agendas, assessment table, rubric, and verified resource list
-- [Course Calendar](https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/instructor/Course_Calendar.docx): November 2026 calendar, session agendas in minutes, key dates, and instructor preparation timeline
-
 ## Free Microsoft resources used in this course
 
 All links verified October 26, 2026.

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsoft Office for Business</title>
+<meta name="description" content="A free two-session beginner workshop on Microsoft 365 for business: Word, Excel, PowerPoint, Outlook, Teams, OneDrive, and Copilot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14325C;
+    --paper: #FBFAF7;
+    --marigold: #F2B134;
+    --marigold-deep: #C98A0F;
+    --slate: #5B6B82;
+    --grid: #D7E0EC;
+    --tile: #FFFFFF;
+    --maxw: 760px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Atkinson Hyperlegible", sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 .5em;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-top: 0; }
+  h3 { font-size: 1.25rem; font-weight: 600; }
+  p { margin: 0 0 1em; }
+  a { color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--marigold-deep); outline-offset: 3px; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* Hero with spreadsheet grid */
+  .hero {
+    background-color: #fff;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 48px 48px;
+    border-bottom: 3px solid var(--ink);
+    padding: 56px 0 48px;
+  }
+  .hero .lede { font-size: 1.25rem; max-width: 34em; color: var(--slate); }
+  .dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 32px 0; max-width: 520px; }
+  .tile {
+    background: var(--tile);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    padding: 14px 16px 16px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .tile .month { font-size: .95rem; color: var(--slate); }
+  .tile .day { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 3rem; line-height: 1; margin: 2px 0 6px; }
+  .tile .what { font-weight: 700; }
+  .tile .when { font-size: .95rem; color: var(--slate); }
+  .btn {
+    display: inline-block;
+    background: var(--marigold);
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 6px;
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .btn:hover { background: #F7C65C; }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; }
+  .btn-row a:not(.btn) { font-weight: 700; }
+
+  section { padding: 48px 0 8px; }
+  section + section { border-top: 1px solid var(--grid); }
+
+  ol.steps { padding-left: 0; list-style: none; counter-reset: step; margin: 0 0 1em; }
+  ol.steps li { counter-increment: step; position: relative; padding-left: 56px; margin-bottom: 18px; }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 2px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.1rem;
+    display: grid; place-items: center;
+  }
+
+  .sessions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .session h3 { margin-bottom: 2px; }
+  .session .meta { color: var(--slate); margin-bottom: 12px; }
+  .session ul { padding-left: 0; list-style: none; margin: 0; }
+  .session li { padding: 10px 0; border-top: 1px solid var(--grid); }
+  .session li:last-child { border-bottom: 1px solid var(--grid); }
+  .session li b { display: block; }
+  .session li span { color: var(--slate); font-size: 1rem; }
+
+  ul.plain { padding-left: 1.2em; margin: 0 0 1em; }
+  ul.plain li { margin-bottom: 8px; }
+
+  .downloads { display: grid; gap: 14px; }
+  .dl {
+    display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+    text-decoration: none; padding: 14px 16px;
+    border: 2px solid var(--ink); border-radius: 6px; background: #fff;
+  }
+  .dl:hover { background: #FFF7E3; }
+  .dl .ext {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: .8rem;
+    background: var(--ink); color: #fff; padding: 6px 8px; border-radius: 4px; margin-top: 3px;
+  }
+  .dl b { display: block; }
+  .dl span { color: var(--slate); font-size: 1rem; }
+
+  .resources { columns: 2; column-gap: 32px; padding-left: 1.2em; margin: 0; }
+  .resources li { break-inside: avoid; margin-bottom: 8px; }
+
+  footer { border-top: 3px solid var(--ink); margin-top: 48px; padding: 28px 0 40px; color: var(--slate); font-size: 1rem; }
+
+  @media (max-width: 640px) {
+    .dates { grid-template-columns: 1fr; }
+    .sessions { grid-template-columns: 1fr; }
+    .resources { columns: 1; }
+    .hero { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Microsoft Office for Business</h1>
+    <p class="lede">A free two-session workshop for beginners. Learn Word, Excel, PowerPoint, Outlook, Teams, OneDrive, and Copilot by building real business documents, and leave with a Microsoft Learn badge.</p>
+
+    <div class="dates" aria-label="Class dates">
+      <div class="tile">
+        <div class="month">Monday, November 2026</div>
+        <div class="day">2</div>
+        <div class="what">Session 1: Documents and data</div>
+        <div class="when">3 hours. Microsoft 365, OneDrive, Word, Excel</div>
+      </div>
+      <div class="tile">
+        <div class="month">Wednesday, November 2026</div>
+        <div class="day">4</div>
+        <div class="what">Session 2: Presenting, email, AI</div>
+        <div class="when">3 hours. PowerPoint, Outlook, Teams, Copilot</div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn" href="https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Student_Workbook.docx">Download the student workbook</a>
+      <a href="#before">What to do before class</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="before">
+    <h2>Before the first session</h2>
+    <p>These three things take about ten minutes and mean you can start working the moment class begins.</p>
+    <ol class="steps">
+      <li><b>Create a free Microsoft account.</b> Go to <a href="https://www.microsoft.com/en/microsoft-365/free-office-online-for-the-web">Microsoft 365 for the web</a> and click Sign up for free. If you already have an Outlook.com, Hotmail, or Xbox account, that works too.</li>
+      <li><b>Sign in to Microsoft Learn.</b> Open <a href="https://learn.microsoft.com/">learn.microsoft.com</a> and sign in with the same account. You will use it in the last lesson to earn your badge.</li>
+      <li><b>Download the workbook.</b> Use the button above. Keep it open during class. Bring a laptop if the session is not in a computer lab.</li>
+    </ol>
+  </section>
+
+  <section id="schedule">
+    <h2>What we cover</h2>
+    <div class="sessions">
+      <div class="session">
+        <h3>Session 1</h3>
+        <p class="meta">Monday, November 2. Three hours with two breaks.</p>
+        <ul>
+          <li><b>Lesson 1: Microsoft 365 and OneDrive</b><span>Sign in, find the apps, create folders, share a file with view or edit permission.</span></li>
+          <li><b>Lesson 2: Word</b><span>Build a one-page business memo from a template: styles, lists, a table, a header, spell check, export to PDF.</span></li>
+          <li><b>Lesson 3: Excel</b><span>Build an expense tracker: enter data, SUM and AVERAGE, currency format, sort, and a chart.</span></li>
+        </ul>
+      </div>
+      <div class="session">
+        <h3>Session 2</h3>
+        <p class="meta">Wednesday, November 4. Three hours with two breaks.</p>
+        <ul>
+          <li><b>Lesson 4: PowerPoint</b><span>A five-slide business presentation with a theme, a picture, and your Excel chart.</span></li>
+          <li><b>Lesson 5: Outlook and Teams</b><span>Send email with a OneDrive link, schedule a Teams meeting, join a meeting, post in a channel.</span></li>
+          <li><b>Lesson 6: Copilot and your badge</b><span>What Copilot does and how to prompt it, then earn the Microsoft Productivity Accreditation 2026.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <h2>What you will leave with</h2>
+    <ul class="plain">
+      <li>A business memo in Word, saved as DOCX and PDF</li>
+      <li>An expense tracker in Excel with totals, an average, and a chart</li>
+      <li>A five-slide business presentation in PowerPoint</li>
+      <li>An email with a OneDrive link and a Teams meeting on your calendar</li>
+      <li>The <a href="https://learn.microsoft.com/en-us/training/paths/microsoft-productivity-accreditation-2026/">Microsoft Productivity Accreditation 2026</a> badge on your Microsoft Learn profile</li>
+    </ul>
+  </section>
+
+  <section id="downloads">
+    <h2>Downloads</h2>
+    <div class="downloads">
+      <a class="dl" href="https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Student_Workbook.docx">
+        <span class="ext">DOCX</span>
+        <span><b>Student Workbook</b><span>Six lessons with step-by-step instructions, practice activities, and self-checks.</span></span>
+      </a>
+      <a class="dl" href="https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Expense_Tracker_Starter.xlsx">
+        <span class="ext">XLSX</span>
+        <span><b>Expense Tracker Starter</b><span>Sample data for Lesson 3 if you prefer not to type it in.</span></span>
+      </a>
+      <a class="dl" href="https://github.com/DrDuckworthTri-C/microsoft-office-for-business/raw/main/student/Microsoft_Certification_Poster.pdf">
+        <span class="ext">PDF</span>
+        <span><b>Microsoft Certification Poster</b><span>A one-page map of every Microsoft certification, for when you are ready for the next step.</span></span>
+      </a>
+    </div>
+    <p style="margin-top:14px; color: var(--slate); font-size: 1rem;">Microsoft updates the poster a few times a year. The newest version is always at <a href="https://aka.ms/CertificationsPoster">aka.ms/CertificationsPoster</a>.</p>
+  </section>
+
+  <section id="resources">
+    <h2>Free Microsoft training used in this course</h2>
+    <p>Everything in the workshop is free from Microsoft. These are the pages the lessons link to, and they are good places to keep learning afterward.</p>
+    <ul class="resources">
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365">Microsoft 365 Help &amp; Learning</a></li>
+      <li><a href="https://adoption.microsoft.com/en-us/user-training/">Foundational user training videos</a></li>
+      <li><a href="https://support.microsoft.com/en-us/word/training/create-a-document-in-word">Word: Create a document</a></li>
+      <li><a href="https://support.microsoft.com/en-us/excel/excel-video-training">Excel video training</a></li>
+      <li><a href="https://support.microsoft.com/en-us/powerpoint/powerpoint-for-windows-training">PowerPoint training</a></li>
+      <li><a href="https://support.microsoft.com/en-us/outlook/outlook-training">Outlook training</a></li>
+      <li><a href="https://support.microsoft.com/en-us/teams/">Microsoft Teams help and learning</a></li>
+      <li><a href="https://support.microsoft.com/en-us/onedrive/training/onedrive-video-tutorials">OneDrive video tutorials</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/copilot-tutorial-meet-microsoft-365-copilot">Copilot tutorial</a></li>
+      <li><a href="https://support.microsoft.com/en-us/office/foundations-experiences/try-it-with-templates">Try it with templates</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Taught by Dr. Carelicha Duckworth, PhD. Course materials are shared under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license. Microsoft training content belongs to Microsoft. Links verified October 26, 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>

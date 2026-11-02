@@ -6,8 +6,8 @@ A free, two-session beginner workshop covering the Microsoft 365 apps used most 
 
 | Session | Date | Length | Topics |
 |---|---|---|---|
-| Session 1 | Monday, November 2, 2026 | 3 hours | Microsoft 365 and OneDrive, Word, Excel |
-| Session 2 | Wednesday, November 4, 2026 | 3 hours | PowerPoint, Outlook and Teams, Copilot, Microsoft Learn badge |
+| Session 1 | Tuesday, November 3, 2026 | 3 hours | Microsoft 365 and OneDrive, Word, Excel |
+| Session 2 | Thursday, November 5, 2026 | 3 hours | PowerPoint, Outlook and Teams, Copilot, Microsoft Learn badge |
 
 ## For students
 
